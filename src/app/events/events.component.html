@@ -1,0 +1,3 @@
+<p [style.color]="color" >events works!</p>
+<button [style.color]="color" (click)="changeColor('blue')">Click to change color</button>
+<input (input)="checkCurrentValue($event)" (keydown.shift.control.enter)="color = 'pink'"/>

@@ -1,0 +1,9 @@
+<p [style.color]="childColorProps">child works!</p>
+
+<button (click)="changeName()"> Child component: {{childName}} </button>
+
+<!-- <ng-content></ng-content> -->
+<ng-content select="p"></ng-content>
+<ng-content select="[someAttribute]"></ng-content>
+<ng-content select=".some-css"></ng-content>
+<ng-content></ng-content>

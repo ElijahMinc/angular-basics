@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test';
+  parentName: string = 'Hello World'
+
+  color = 'red'
+  title = 'h1 red color';
+
+  user = {
+    name: 'Ilya',
+    age: 25
+  }
+
+  subtitle = 'something'
+
+  setNewNameFromChildComponent(newName: string){
+    this.parentName = newName
+  }
 }
