@@ -1,50 +1,22 @@
 <router-outlet>
-  <h1>{{title}}</h1>
+<h2>First h2</h2>
 
-  <div>
-    <p>{{user.name}}</p>
-    <p>{{user.age}}</p>
-  </div>
+<ng-template #test let-defaultValue let-textHello="textHello" let-textWorld="textWorld">
+  <h2>{{textHello}} {{textWorld}}!</h2>
 
-  <a href="#" [title]="subtitle">Linlk</a>
+  {{defaultValue}}
 
-  <!--  PIPES -->
-  <app-pipes></app-pipes>
-  
-  <!-- EVENTS -->
-  <app-events></app-events>
+</ng-template>
 
-  <!-- CHILD COMPONENTS -->
-  <!-- one-way binding -->
-<!-- 
-  <app-child 
-    [childName]="parentName"  
-    [childColor]="color"
-    (nameChange)="setNewNameFromChildComponent($event)" 
-  >
-  </app-child> -->
+<ng-container *ngTemplateOutlet="test; context: {$implicit: 'default Value', textHello: 'Hello', textWorld: 'World'}">
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero magnam numquam ex exercitationem itaque fugiat explicabo dolor, aperiam perferendis, eaque provident fuga porro voluptate autem quos, doloremque laboriosam nostrum! Pariatur.
+  Voluptas aspernatur reprehenderit, iure magni quidem harum eveniet! Aliquid soluta, sapiente sunt quam fuga quis veniam ipsam, similique inventore dolor dolorem doloremque recusandae dignissimos doloribus. Debitis nihil enim dolore incidunt.
+  </p>
+</ng-container>
 
-  <!-- two-way binding -->
-  <app-child 
-  [childColor]="color"
-  [(childName)]="parentName"
->
-<p style="color: red;" >
-  HERE IS NG-CONTENT as P tag
 
-</p>
-<h3 style="color: blue;" someAttribute>
-  HERE IS NG-CONTENT as h3 tag
 
-</h3>
-<article style="color: yellow;" class="some-css">
-  HERE IS NG-CONTENT as article tag
-
-</article>
-<app-ng-content-example></app-ng-content-example>
-</app-child>
-
-<p>Parent component: {{parentName}}</p>
-<button (click)="setNewNameFromChildComponent('The name changed by parent component')">The name changed by parent component</button>
+<h2>Third h2</h2>
 
 </router-outlet>
